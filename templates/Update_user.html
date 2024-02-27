@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block form %}
+  <body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="shadow p-3 mb-5 bg-white rounded" style="width: 500px;">
+        <h3 style="text-align: center;">Update</h3>
+        <form method="post">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user.name }}" class="form-control" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" value="{{ user.age }}" class="form-control" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="{{ user.location }}" class="form-control" required>
+          </div>
+      
+          <button type="submit" class="btn btn-success d-block mx-auto mt-3">Update</button>
+        </form>
+      </div>
+    </div>
+  </body>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block form %}
+<h2 style="text-align: center;" class="mt-4">Users List</h2>
+<div class="container mt-4">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+                <th>Update</th> 
+                <th>Delete</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.location }}</td>
+                <td>
+                    <a href="{{ url_for('update_user', _id=user._id) }}" class="btn btn-success btn-sm">Update</a>
+                </td> 
+                <td> 
+                    <a href="{{ url_for('delete_user', _id=user._id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

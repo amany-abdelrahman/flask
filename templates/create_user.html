@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block form %}
+<body style="background-color: #f8f9fa;">
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="shadow p-3 mb-5 bg-white rounded" style="width: 500px;">
+      <h3 class="text-center">Create User</h3>
+      <form method="POST" action="{{ url_for('adduser') }}">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Age</label>
+          <input type="number" name="age" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Location</label>
+          <input type="text" name="location" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success d-block mx-auto">Create</button>
+      </form>
+    </div>
+  </div>
+</body>
+{% endblock %}
